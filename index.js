@@ -3,7 +3,7 @@ const { GoogleAuth } = require('google-auth-library');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const serviceAccount = require('./service-account-key.json');
+const serviceAccount = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON);
 
 app.get('/token', async (req, res) => {
   try {
